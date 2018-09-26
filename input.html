@@ -1,0 +1,28 @@
+<input type='range' min='8' max='24' id='length' list="length1" oninput="printValue()"></input>
+<datalist id='length1'>
+<option value='8'>
+<option value='16'>
+<option value='24'>
+</datalist>
+<div id='value'>14</div>
+<input type='submit' value='Generate!' onclick="getPassword(document.getElementById('length').value)"></input>
+<input id="password" type="text"></input>
+<script>
+function printValue() {
+value.innerText = document.getElementById('length').value;
+}
+function getPassword(length) {
+a = 48;
+b = 122;
+password = [];
+for (i = 0; i < length;) {
+	char = Math.floor(Math.random() * (b-a+1) + a);
+	if (char > 57 && char < 65) continue;
+	if (char > 90 && char < 97) continue;
+	password.push(String.fromCharCode(char));
+	i++;
+}
+//pass = password.join('');
+document.getElementById('password').value = password.join('');
+}
+</script>
