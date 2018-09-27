@@ -1,10 +1,10 @@
-<input type='range' min='8' max='24' id='length' list="length1" oninput="printValue()"></input>
+<input type='range' min='8' max='24' id='length' list="length1" value='10' oninput="printValue()"></input>
 <datalist id='length1'>
 <option value='8'>
 <option value='16'>
 <option value='24'>
 </datalist>
-<div id='value'>14</div>
+<div id='value'>10</div>
 <input type='checkbox' id='specialchar'>Use special symbols like !@#$%</input>
 <input type='submit' value='Generate!' onclick="getPassword(document.getElementById('length').value)"></input>
 <input id="password" type="text"></input>
