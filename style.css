@@ -1,0 +1,35 @@
+body {
+background-image: url(bg-4868.png);
+background-color: #F5F5F5;
+font-family: Geneva, Arial, Helvetica, sans-serif;
+font-size: 95%;
+}
+
+.center {
+position: fixed; 
+top: 50%;
+left: 50%;
+width: 310px;
+height: 100px;
+transform: translate(-50%, -50%);
+}
+
+#length {
+width: 300px;
+}
+
+#value {
+display: inline-block;
+font-weight: 600;
+}
+
+#specialchar {
+margin-bottom: 7px;
+}
+
+#warning {
+color: red;
+font-weight: 400;
+font-size: 80%;
+margin-top: 7px;
+}
