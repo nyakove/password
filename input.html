@@ -5,6 +5,7 @@
 <option value='24'>
 </datalist>
 <div id='value'>14</div>
+<input type='checkbox' id='specialchar'>Use special symbols like !@#$%</input>
 <input type='submit' value='Generate!' onclick="getPassword(document.getElementById('length').value)"></input>
 <input id="password" type="text"></input>
 <script>
@@ -12,9 +13,23 @@ function printValue() {
 value.innerText = document.getElementById('length').value;
 }
 function getPassword(length) {
+var a;
+var b;
+password = [];
+if (document.getElementById('specialchar').checked) {
+	a = 33;
+	b = 126;
+	for (i = 0; i < length;) {
+		char = Math.floor(Math.random() * (b-a+1) + a);
+		if (char == 34 || char == 39 || char == 44 || char == 46 || char == 47 || char == 58 || char == 59 || char == 60 || char == 92 || char == 96) continue;
+		password.push(String.fromCharCode(char));
+		i++;
+	}
+	document.getElementById('password').value = password.join('');
+	return;
+}
 a = 48;
 b = 122;
-password = [];
 for (i = 0; i < length;) {
 	char = Math.floor(Math.random() * (b-a+1) + a);
 	if (char > 57 && char < 65) continue;
@@ -23,6 +38,6 @@ for (i = 0; i < length;) {
 	i++;
 }
 document.getElementById('password').value = password.join('');
-}
 
+}
 </script>
