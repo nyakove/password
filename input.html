@@ -23,20 +23,34 @@ width: 300px;
 
 #value {
 display: inline-block;
+font-weight: 600;
+}
+
+#specialchar {
+margin-bottom: 7px;
+}
+
+#warning {
+color: red;
+font-weight: 400;
+font-size: 80%;
+margin-top: 7px;
 }
 </style>
 </head>
-<div class="center"><input type='range' min='8' max='24' id='length' list="length1" value='10' oninput="printValue(); getPassword(document.getElementById('length').value)"></input>
+<div class="center"><input type='range' min='1' max='24' id='length' list="length1" value='10' oninput="printValue(); getPassword(document.getElementById('length').value)"></input>
 <datalist id='length1'>
+<option value='1'>
 <option value='8'>
 <option value='16'>
 <option value='24'>
 </datalist>
-&nbsp;Password length:&nbsp;<div id='value'>10</div>
-<div><input type='checkbox' id='specialchar' onclick="getPassword(document.getElementById('length').value)">Use special symbols like !@#$%</input>
+&nbsp;Password length:&nbsp;<div id='value'></div>
+<div><input type='checkbox' id='specialchar' onclick="getPassword(document.getElementById('length').value)">Use special symbols (!@#$% etc.)</input>
 <input type='submit' value='Generate!' onclick="getPassword(document.getElementById('length').value)"></input>
 <input id="password" type="text"></input>
 <input type='button' id='copy' value='Copy' onclick="copy()"></input></div>
+<div id='warning'></div>
 </div>
 <script>
 
@@ -53,6 +67,10 @@ area.blur();
 }
 
 function getPassword(length) {
+if (document.getElementById('length').value < 8) {
+warning.innerText = 'Short passwords is unsafe!'
+}
+else {warning.innerText = '';}
 password = [];
 if (document.getElementById('specialchar').checked) {
 	a = 33;
@@ -87,5 +105,5 @@ document.getElementById('password').value = password.join('');
 
 }
 
-window.onload = getPassword(document.getElementById('length').value);
+window.onload = getPassword(document.getElementById('length').value), printValue();
 </script>
