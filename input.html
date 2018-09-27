@@ -1,14 +1,40 @@
-<input type='range' min='8' max='24' id='length' list="length1" value='10' oninput="printValue(); getPassword(document.getElementById('length').value)"></input>
+<head>
+<meta charset="utf-8" />
+<style>
+body {
+background-color: #F5F5F5;
+}
+
+.center {
+position: fixed; 
+top: 50%;
+left: 50%;
+width: 310px;
+height: 100px;
+transform: translate(-50%, -50%);
+}
+
+#length {
+width: 300px;
+}
+
+#value {
+display: inline-block;
+}
+</style>
+</head>
+<div class="center"><input type='range' min='8' max='24' id='length' list="length1" value='10' oninput="printValue(); getPassword(document.getElementById('length').value)"></input>
 <datalist id='length1'>
 <option value='8'>
 <option value='16'>
 <option value='24'>
 </datalist>
-<div id='value'>10</div>
-<input type='checkbox' id='specialchar' onclick="getPassword(document.getElementById('length').value)">Use special symbols like !@#$%</input>
+&nbsp;Password length:&nbsp;<div id='value'>10</div>
+<div><input type='checkbox' id='specialchar' onclick="getPassword(document.getElementById('length').value)">Use special symbols like !@#$%</input>
 <input type='submit' value='Generate!' onclick="getPassword(document.getElementById('length').value)"></input>
-<input id="password" type="text" disabled></input>
-<input type='button' id='copy' value='Copy' onclick="copy()"></input>
+<input id="password" type="text"></input>
+<input type='button' id='copy' value='Copy' onclick="copy()"></input></div>
+</div>
 <script>
 
 function printValue() {
@@ -17,11 +43,10 @@ value.innerText = document.getElementById('length').value;
 
 function copy() {
 var area = document.getElementById('password');
-area.disabled = false;
 area.focus();
 area.select();
 document.execCommand("copy")
-area.disabled = true;
+area.blur();
 }
 
 function getPassword(length) {
