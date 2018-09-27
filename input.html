@@ -25,7 +25,21 @@ if (document.getElementById('specialchar').checked) {
 		password.push(String.fromCharCode(char));
 		i++;
 	}
-	document.getElementById('password').value = password.join('');
+	var pass = password.join('');
+	var isSpec = false;
+	for (k = 0; k < pass.length; k++)
+		if ('!#$%&()+*-<>=?@[]^{}|~'.indexOf(pass[k]) > -1) {
+		isSpec = true;
+		document.getElementById('password').value = pass;
+		break;
+		}
+	if (isSpec == false) getPassword(document.getElementById('length').value);	
+//	if (pass.indexOf('%') == -1) {
+//	getPassword(document.getElementById('length').value)
+//	}
+	
+//	document.getElementById('password').value = password.join('');
+	
 	return;
 }
 a = 48;
