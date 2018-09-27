@@ -1,7 +1,7 @@
 body {
 background-image: url(bg-4868.png);
 background-color: #F5F5F5;
-font-family: Geneva, Arial, Helvetica, sans-serif;
+font-family: "Segoe UI", Geneva, Arial, Helvetica, sans-serif;
 font-size: 95%;
 }
 
@@ -12,7 +12,6 @@ left: 50%;
 width: 310px;
 height: 100px;
 transform: translate(-50%, -50%);
-border: 1px solid black;
 }
 
 #length {
