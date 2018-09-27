@@ -5,7 +5,7 @@
 <option value='24'>
 </datalist>
 <div id='value'>10</div>
-<input type='checkbox' id='specialchar'>Use special symbols like !@#$%</input>
+<input type='checkbox' id='specialchar' onclick="getPassword(document.getElementById('length').value)">Use special symbols like !@#$%</input>
 <input type='submit' value='Generate!' onclick="getPassword(document.getElementById('length').value)"></input>
 <input id="password" type="text" disabled></input>
 <input type='button' id='copy' value='Copy' onclick="copy()"></input>
@@ -58,4 +58,6 @@ for (i = 0; i < length;) {
 document.getElementById('password').value = password.join('');
 
 }
+
+window.onload = getPassword(document.getElementById('length').value);
 </script>
