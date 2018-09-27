@@ -26,20 +26,14 @@ if (document.getElementById('specialchar').checked) {
 		i++;
 	}
 	var pass = password.join('');
-	var isSpec = false;
+	var isSpec = true;
 	for (k = 0; k < pass.length; k++)
 		if ('!#$%&()+*-<>=?@[]^{}|~'.indexOf(pass[k]) > -1) {
-		isSpec = true;
+		isSpec = false;
 		document.getElementById('password').value = pass;
 		break;
 		}
-	if (isSpec == false) getPassword(document.getElementById('length').value);	
-//	if (pass.indexOf('%') == -1) {
-//	getPassword(document.getElementById('length').value)
-//	}
-	
-//	document.getElementById('password').value = password.join('');
-	
+	if (isSpec) getPassword(document.getElementById('length').value);	
 	return;
 }
 a = 48;
