@@ -1,4 +1,4 @@
-<input type='range' min='8' max='24' id='length' list="length1" value='10' oninput="printValue()"></input>
+<input type='range' min='8' max='24' id='length' list="length1" value='10' oninput="printValue(); getPassword(document.getElementById('length').value)"></input>
 <datalist id='length1'>
 <option value='8'>
 <option value='16'>
