@@ -7,14 +7,24 @@
 <div id='value'>10</div>
 <input type='checkbox' id='specialchar'>Use special symbols like !@#$%</input>
 <input type='submit' value='Generate!' onclick="getPassword(document.getElementById('length').value)"></input>
-<input id="password" type="text"></input>
+<input id="password" type="text" disabled></input>
+<input type='button' id='copy' value='Copy' onclick="copy()"></input>
 <script>
+
 function printValue() {
 value.innerText = document.getElementById('length').value;
 }
+
+function copy() {
+var area = document.getElementById('password');
+area.disabled = false;
+area.focus();
+area.select();
+document.execCommand("copy")
+area.disabled = true;
+}
+
 function getPassword(length) {
-var a;
-var b;
 password = [];
 if (document.getElementById('specialchar').checked) {
 	a = 33;
