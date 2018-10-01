@@ -3,7 +3,7 @@
 <link rel="stylesheet" href='style.css'>
 </head>
 <body>
-<div class="center"><input type='range' min='1' max='24' id='length' list="length1" value='10' oninput="printValue(); getPassword(document.getElementById('length').value)"></input>
+<div class="center"><input type='range' min='1' max='24' id='length' list="length1" value='10'></input>
 <datalist id='length1'>
 <option value='1'>
 <option value='8'>
@@ -11,10 +11,10 @@
 <option value='24'>
 </datalist>
 &nbsp;Password length:&nbsp;<div id='value'></div>
-<div><input type='checkbox' id='specialchar' onclick="getPassword(document.getElementById('length').value)">Use special symbols (!@#$% etc.)</input>
-<input type='submit' value='Generate!' onclick="getPassword(document.getElementById('length').value)"></input>
+<div><input type='checkbox' id='specialchar'>Use special symbols (!@#$% etc.)</input>
+<input type='submit' value='Generate!' id = "gen"></input>
 <input id="password" type="text"></input>
-<input type='button' id='copy' value='Copy' onclick="copy()"></input></div>
+<input type='button' id='copy' value='Copy' ></input></div>
 <div id='warning'></div>
 </div>
 <script src="scripts.js"></script>

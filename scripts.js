@@ -50,4 +50,11 @@ document.getElementById('password').value = password.join('');
 
 }
 
-window.onload = getPassword(document.getElementById('length').value), printValue();
+//window.onload = getPassword(document.getElementById('length').value), printValue();
+document.getElementById('copy').addEventListener('click', copy);
+document.getElementById('length').addEventListener('input', printValue);
+document.getElementById('length').addEventListener('input', function () {getPassword(document.getElementById('length').value);});
+document.getElementById('gen').addEventListener('click', function () {getPassword(document.getElementById('length').value);});
+document.getElementById('specialchar').addEventListener('click', function () {getPassword(document.getElementById('length').value);});
+document.addEventListener('DOMContentLoaded', printValue);
+document.addEventListener('DOMContentLoaded', function () {getPassword(document.getElementById('length').value);});
