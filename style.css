@@ -27,6 +27,12 @@ font-weight: 600;
 margin-bottom: 7px;
 }
 
+label {
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+}
+
 #warning {
 color: red;
 font-weight: 400;
