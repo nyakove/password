@@ -26,7 +26,12 @@ if (document.getElementById('specialchar').checked) {
 		password.push(String.fromCharCode(char));
 		i++;
 	}
-	var pass = password.join('');
+	pass = password.join('');
+	if (document.getElementById('length').value >= 8) {
+		if (pass.match(/[0-9]/) === null || pass.match(/[A-Z]/) === null || pass.match(/[a-z]/) === null) {
+			getPassword(document.getElementById('length').value);
+		}
+	}
 	var isSpec = true;
 	for (k = 0; k < pass.length; k++)
 		if ('!#$%&()+*-<>=?@[]^{}|~'.indexOf(pass[k]) > -1) {
@@ -46,7 +51,13 @@ for (i = 0; i < length;) {
 	password.push(String.fromCharCode(char));
 	i++;
 }
-document.getElementById('password').value = password.join('');
+passSimple = password.join('');
+if (document.getElementById('length').value >= 8) {
+	if (passSimple.match(/[0-9]/) === null || passSimple.match(/[A-Z]/) === null || passSimple.match(/[a-z]/) === null) {
+		getPassword(document.getElementById('length').value);
+	}
+}
+document.getElementById('password').value =  passSimple;
 
 }
 
