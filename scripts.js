@@ -1,3 +1,10 @@
+function isIE() {
+	ua = window.navigator.userAgent;
+	if (ua.match(/Trident/) != null || ua.match(/MSIE/) != null)
+		return true
+	else 
+		return false
+}
 
 function printValue() {
 value.innerText = document.getElementById('length').value;
@@ -58,7 +65,6 @@ if (document.getElementById('length').value >= 8) {
 	}
 }
 document.getElementById('password').value =  passSimple;
-
 }
 
 document.getElementById('copy').addEventListener('click', copy);
@@ -68,3 +74,7 @@ document.getElementById('gen').addEventListener('click', function () {getPasswor
 document.getElementById('specialchar').addEventListener('click', function () {getPassword(document.getElementById('length').value);});
 document.addEventListener('DOMContentLoaded', printValue);
 document.addEventListener('DOMContentLoaded', function () {getPassword(document.getElementById('length').value);});
+if (isIE()) {
+	document.getElementById('length').addEventListener('change', printValue);
+    document.getElementById('length').addEventListener('change', function () {getPassword(document.getElementById('length').value);});
+}
