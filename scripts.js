@@ -35,7 +35,7 @@ if (document.getElementById('specialchar').checked) {
 	}
 	pass = password.join('');
 	if (document.getElementById('length').value >= 8) {
-		if (pass.match(/[0-9]/) === null || pass.match(/[A-Z]/) === null || pass.match(/[a-z]/) === null) {
+		if (/[0-9]/.test(pass) != true || /[A-Z]/.test(pass) != true || /[a-z]/.test(pass) != true) {
 			getPassword(document.getElementById('length').value);
 		}
 	}
@@ -60,7 +60,7 @@ for (i = 0; i < length;) {
 }
 passSimple = password.join('');
 if (document.getElementById('length').value >= 8) {
-	if (passSimple.match(/[0-9]/) === null || passSimple.match(/[A-Z]/) === null || passSimple.match(/[a-z]/) === null) {
+	if (/[0-9]/.test(passSimple) != true || /[A-Z]/.test(passSimple) != true || /[a-z]/.test(passSimple) != true) {
 		getPassword(document.getElementById('length').value);
 	}
 }
