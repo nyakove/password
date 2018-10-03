@@ -36,7 +36,7 @@ if (document.getElementById('specialchar').checked) {
 	pass = password.join('');
 	if (document.getElementById('length').value >= 8) {
 		if (/[0-9]/.test(pass) != true || /[A-Z]/.test(pass) != true || /[a-z]/.test(pass) != true) {
-			getPassword(document.getElementById('length').value);
+		getPassword(document.getElementById('length').value);
 		}
 	}
 	var isSpec = true;
@@ -61,7 +61,7 @@ for (i = 0; i < length;) {
 passSimple = password.join('');
 if (document.getElementById('length').value >= 8) {
 	if (/[0-9]/.test(passSimple) != true || /[A-Z]/.test(passSimple) != true || /[a-z]/.test(passSimple) != true) {
-		getPassword(document.getElementById('length').value);
+	getPassword(document.getElementById('length').value);
 	}
 }
 document.getElementById('password').value =  passSimple;
@@ -75,6 +75,6 @@ document.getElementById('specialchar').addEventListener('click', function () {ge
 document.addEventListener('DOMContentLoaded', printValue);
 document.addEventListener('DOMContentLoaded', function () {getPassword(document.getElementById('length').value);});
 if (isIE()) {
-	document.getElementById('length').addEventListener('change', printValue);
-    document.getElementById('length').addEventListener('change', function () {getPassword(document.getElementById('length').value);});
+document.getElementById('length').addEventListener('change', printValue);
+document.getElementById('length').addEventListener('change', function () {getPassword(document.getElementById('length').value);});
 }
