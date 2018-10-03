@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8" />
-<title>PassGen</title>
-<link rel="stylesheet" href='style.css'>
-<link rel="shortcut icon" href="icon96.png">
-</head>
-<body>
-<div class="center"><input type='range' min='1' max='24' id='length' list="length1" value='10'></input>
-<datalist id='length1'>
-<option value='1'>
-<option value='8'>
-<option value='16'>
-<option value='24'>
-</datalist>
-&nbsp;Password length:&nbsp;<div id='value'></div>
-<div>
-<label>
-<input type='checkbox' id='specialchar'>Use special symbols (!@#$% etc.)</input>
-</label>
-<input type='submit' value='Generate!' id = "gen"></input>
-<input id="password" type="text"></input>
-<input type='button' id='copy' value='Copy' ></input></div>
-<div id='warning'></div>
-</div>
-<script src="scripts.js"></script>
-</body>
+   <head>
+      <meta charset="utf-8" />
+      <title>PassGen</title>
+      <link rel="stylesheet" href='style.css'>
+      <link rel="shortcut icon" href="icon96.png">
+   </head>
+   <body>
+      <div class="center">
+         <input type='range' min='1' max='24' id='length' list="length1" value='10'></input>
+         <datalist id='length1'>
+            <option value='1'>
+            <option value='8'>
+            <option value='16'>
+            <option value='24'>
+         </datalist>
+         &nbsp;Password length:&nbsp;<div id='value'></div>
+         <div>
+         <label><input type='checkbox' id='specialchar'>Use special symbols (!@#$% etc.)</input></label>
+         <input type='submit' value='Generate!' id = "gen"></input>
+         <input id="password" type="text"></input>
+         <input type='button' id='copy' value='Copy' ></input></div>
+         <div id='warning'></div>
+      </div>
+      <script src="scripts.js"></script>
+   </body>
 </html>
