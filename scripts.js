@@ -67,6 +67,17 @@ if (document.getElementById('length').value >= 8) {
 document.getElementById('password').value =  passSimple;
 }
 
+function keyOps() {
+	if(event.key == 'Enter') {
+		getPassword(document.getElementById('length').value);
+	}
+	if (event.ctrlKey && event.key == 'c') {
+		event.preventDefault()
+		copy();
+	} 
+}
+
+document.addEventListener('keydown', keyOps);
 document.getElementById('copy').addEventListener('click', copy);
 document.getElementById('length').addEventListener('input', printValue);
 document.getElementById('length').addEventListener('input', function () {getPassword(document.getElementById('length').value);});
