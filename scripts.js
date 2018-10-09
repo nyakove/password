@@ -71,7 +71,7 @@ function keyOps() {
 	if(event.key == 'Enter') {
 		getPassword(document.getElementById('length').value);
 	}
-	if (event.ctrlKey && event.key == 'c') {
+	if (event.ctrlKey && event.code == 'KeyC') {
 		event.preventDefault()
 		copy();
 	} 
